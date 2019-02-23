@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import CalendarHeatmap from 'react-calendar-heatmap';
+import stockData from './assets/data'
 
 class App extends Component {
+  state = {
+    data: stockData,
+    startDate: new Date('2017-01-01'),
+    endDate: new Date('2017-12-31')
+    
+  }
   render() {
   
     return (
@@ -11,14 +18,9 @@ class App extends Component {
        <div className="heatmap">
          <h3>heatmap clarendar demo</h3>
          <CalendarHeatmap
-            startDate={new Date('2016-01-01')}
-            endDate={new Date('2016-04-01')}
-            values={[
-              { date: '2016-01-01' },
-              { date: '2016-01-22' },
-              { date: '2016-01-30' },
-              // ...and so on
-            ]}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            values={this.state.data}
           />
        </div>
        <footer>copyright@neuroeventLabs</footer>
