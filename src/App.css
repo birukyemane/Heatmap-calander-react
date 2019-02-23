@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: helvetica, sans-serif;
+}
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -11,13 +15,37 @@
 }
 
 header {
-  font-size: 30px;
-  padding: 30px;
-  background-color: black;
   color: white;
   width: 100%;
-  height: 20%;
+  background: url('./assets/stock-1863880_1920.jpg');
+  background-size: cover;
+  padding: 40px 0px 40px 0px;
+}
+
+article {
+  margin: 0 0 30px 0;
+}
+
+h1 {
+  font-size: 70px;
   text-align: center;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 30px 0 20px 0;
+}
+
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
 }
 
 .heatmap {
@@ -62,7 +90,7 @@ footer {
   fill: #8cc665;
 }
 
-/* color scale */
+/* palette color scale */
 
 .react-calendar-heatmap .color-scale-120 { fill: #DEEDCF; }
 .react-calendar-heatmap .color-scale-130 { fill: #99D492; }
@@ -73,23 +101,28 @@ footer {
 .react-calendar-heatmap .color-scale-180 { fill: #0E4D64; }
 .react-calendar-heatmap .color-scale-200 { fill: #0A2F51; }
 
-/*
- * Github color scale
- */
+/* responisve styles*/
 
-.react-calendar-heatmap .color-github-0 {
-  fill: #eeeeee;
-}
-.react-calendar-heatmap .color-github-1 {
-  fill: #d6e685;
-}
-.react-calendar-heatmap .color-github-2 {
-  fill: #8cc665;
-}
-.react-calendar-heatmap .color-github-3 {
-  fill: #44a340;
-}
-.react-calendar-heatmap .color-github-4 {
-  fill: #1e6823;
-}
+@media (max-width: 500px){ 
+  header {
+    padding: 10px 0px 10px 0px;
+  }     
 
+  h1 {
+    font-size: 36px;
+  }  
+
+  h2 {
+    font-size: 16px;
+    margin: 20px 0 15px 0;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .heatmap {
+    width: 90%;
+  }
+}
