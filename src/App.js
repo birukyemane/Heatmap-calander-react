@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import CalendarHeatmap from 'react-calendar-heatmap';
+import ReactTooltip from 'react-tooltip';
 import stockData from './assets/data'
 
 class App extends Component {
   state = {
     data: stockData,
-    startDate: new Date('2017-01-01'),
+    startDate: new Date('2016-12-31'),
     endDate: new Date('2017-12-31')
     
   }
@@ -24,7 +25,7 @@ class App extends Component {
             about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
           </p>
         </article>       
-         <CalendarHeatmap
+          <CalendarHeatmap
             startDate={this.state.startDate}
             endDate={this.state.endDate}
             values={this.state.data}
@@ -32,6 +33,8 @@ class App extends Component {
             showWeekdayLabels={true}
             tooltipDataAttrs={getToolTip}
           />
+          <diV>{legend}</diV>
+          <ReactTooltip />
        </div>
        <footer>copyright@neuroeventLabs</footer>
      </div>
@@ -67,7 +70,7 @@ const getToolTip = value => {
   if (!value.date) {
     console.log('no value')
     return {
-      'data-tip': 'data',
+      'data-tip': 'no data',
     };
   } else {
     console.log('error in value ', value)
@@ -75,4 +78,13 @@ const getToolTip = value => {
       'data-tip': `${value.date.toString().slice(0, 10)} closing price: ${value.close}`,
     };
   } 
+}
+
+const legend = () =>{
+  const  scales = [120,130,140,150,160,170,180] ;
+  const legendSymbols = scales.map((scale,index) =>{
+    return <div className={`ledgendSymbol color-scale-${scale}`}></div>
+  })
+  return <div className="legend">{legendSymbols}</div>
+
 }

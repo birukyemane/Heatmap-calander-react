@@ -101,6 +101,11 @@ footer {
 .react-calendar-heatmap .color-scale-180 { fill: #0E4D64; }
 .react-calendar-heatmap .color-scale-200 { fill: #0A2F51; }
 
+.ledgendSymbol{
+  width: 10px;
+  height: 10px;
+}
+
 /* responisve styles*/
 
 @media (max-width: 500px){ 
