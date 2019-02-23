@@ -1,4 +1,10 @@
-.App {
-  text-align: center;
-  width: 40%;
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-size: 30px;
+  padding: 30px;
 }

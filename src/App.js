@@ -5,7 +5,13 @@ class App extends Component {
   render() {
   
     return (
-     <div>hello</div>
+     <div>
+       <header>Heatmap caledar</header>
+       <div>
+         <h3>heatmap clarendar goes here</h3>
+       </div>
+       <footer>copyright@neuroeventLabs</footer>
+     </div>
     );
   }
 }
