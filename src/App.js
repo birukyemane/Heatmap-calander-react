@@ -15,7 +15,16 @@ library.add(faForward, faBackward);
 class App extends Component {
   state = {
     data: stockData,
-    currentYear : '2017'      
+    currentYear : '2016'      
+  }
+
+  nextYear = () => {
+    if(this.state.currentYear < 2019) this.setState({currentYear:Number(this.state.currentYear) + 1})
+    console.log('currnt year', this.state.currentYear)
+  };
+
+  prevYear = () => {
+    if(this.state.currentYear > 2015) this.setState({currentYear:Number(this.state.currentYear) - 1})
   }
 
   render() {  
@@ -31,9 +40,9 @@ class App extends Component {
             about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
           </p>
         </article>       
-          <Slider year={this.state.currentYear}/>
+          <Slider year={this.state.currentYear} prev={this.prevYear} next={this.nextYear}/>
           <CalendarHeatmap
-            startDate={`${this.state.currentYear-1}-12-31`}
+            startDate={`${Number(this.state.currentYear)-1}-12-31`}
             endDate={`${this.state.currentYear}-12-31`}
             values={this.state.data}
             classForValue={generateClass}

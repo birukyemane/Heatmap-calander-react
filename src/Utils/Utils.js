@@ -24,12 +24,10 @@ const generateClass = value => {
   
   const getToolTip = value => {
     if (!value.date) {
-      console.log('no value')
       return {
         'data-tip': 'no data',
       };
     } else {
-      console.log('error in value ', value)
       return {
         'data-tip': `${value.date.toString().slice(0, 10)} closing price: ${value.close}`,
       };
