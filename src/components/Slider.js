@@ -5,9 +5,9 @@ const Slider = (props) => {
     const {prev, next} = props;
     return (
         <div className="slider"> 
-            <FontAwesomeIcon icon="backward" onClick={prev}></FontAwesomeIcon>
-            <h2>{props.year}</h2>
-            <FontAwesomeIcon icon="forward" onClick={next}></FontAwesomeIcon>
+            <FontAwesomeIcon className="arrow" icon="backward" onClick={prev}></FontAwesomeIcon>
+            <h2 className>{props.year}</h2>
+            <FontAwesomeIcon className="arrow" icon="forward" onClick={next}></FontAwesomeIcon>
         </div>
     );
 }

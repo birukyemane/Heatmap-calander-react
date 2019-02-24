@@ -6,27 +6,57 @@
 
 body {
   font-family: helvetica, sans-serif;
+  background: #EFEFEF;
 }
 
-.main-wrapper {
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
-  background: black;
+  background:#404040;
   width: 100%;
-  padding: 40px 0px 40px 0px;
+  padding: 40px 0px 0 0px;
 }
 
-article {
-  margin: 0 0 30px 0;
+.blueHeader {
+  background: #4693d9;
+  width: 70%;
+  position: relative;
+}
+
+.blueTitle {
+  color: #ddd;
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+.blueTitle-emphasis {
+  color: white;
+  font-style: italic;
+}
+
+.blueHeader::after {  
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 41px solid #4693d9;
+  border-right: 34px solid transparent;
+  position: absolute;
+  bottom: -41px;
+  left: 0;
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 40px;
+  margin-bottom: 5px;
   text-align: center;
   font-family: 'Londrina Shadow', cursive;
 }
@@ -34,38 +64,175 @@ h1 {
 h2 {
   font-size: 20px;
   margin: 30px 0 20px 0;
-  color: blue;
 }
 
-p {
- 
-  padding: 10px;
+p { 
   line-height: 28px;
   text-align: justify;
 }
 
+.introText {
+  background: white;
+  padding: 12px;
+  margin-top: 20px;
+  box-shadow:  14px 0 30px -14px #333;
+}
+
+
+.heatmap {
+  background: white;
+  box-shadow:  14px 0 30px -14px #333;
+}
+
 .slider {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.heatmap {
+.arrow {
+  font-size: 20Px;
+  color: #4693d9;
+  margin: 0 20px;
+}
+
+.arrow:hover {
+  color: #00FF00;
+}
+
+.content {
   width: 70%;
 }
 
-footer {
-  font-size: 20px;
-  padding: 20px;
+/* ledgend styles */
+
+.ledgend-symbol-120 { border: 5px solid #DEEDCF; width: 50px;}
+.ledgend-symbol-130 { border: 5px solid #99D492; width: 50px;}
+.ledgend-symbol-140 {border: 5px solid #56B870; width: 50px;}
+.ledgend-symbol-150 {border: 5px solid #1D9A6C; width: 50px;}
+.ledgend-symbol-160 {border: 5px solid #188977; width: 50px;}
+.ledgend-symbol-170 {border: 5px solid #137177; width: 50px;}
+.ledgend-symbol-180 {border: 5px solid #0E4D64; width: 50px;}
+.ledgend-symbol-200 {border: 5px solid #0A2F51; width: 50px;}
+
+
+.ledgend {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
 }
+
+.ledgend-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  background: white;
+  margin-bottom:30px;
+}
+
+footer {
+  background:#404040;
+  color: darkgrey;
+  width: 100%;
+}
+
+.footerHolder {
+  display: flex;
+  justify-content: center;
+}
+
+
+.footerContent {
+  width: 22%;
+  padding: 13px;
+  color: white;
+  padding: 13px;
+  text-align: left;
+}
+
+.title {
+  margin-bottom:10px;
+  margin-top: 13px;
+  font-size: 17px;
+}
+
+
+footer p {
+  color:  grey;
+  font-size: 15px;
+}
+
+footer section {
+  padding: 13px 0;
+  background:#202020;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* responisve styles*/
+
+@media (max-width: 500px){ 
+  header {
+    padding: 10px 0px 10px 0px;
+  }     
+
+  h1 {
+    font-size: 36px;
+  }  
+
+  h2 {
+    font-size: 16px;
+    margin: 20px 0 15px 0;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .blueHeader {
+    display: none;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .footerHolder {
+    display: none;
+  }
+
+  footer p {
+    color:  grey;
+    font-size: 10px;
+  }
+
+  .ledgend-symbol-120 { border: 5px solid #DEEDCF; width: 20px;}
+  .ledgend-symbol-130 { border: 5px solid #99D492; width: 20px;}
+  .ledgend-symbol-140 {border: 5px solid #56B870; width: 20px;}
+  .ledgend-symbol-150 {border: 5px solid #1D9A6C; width: 20px;}
+  .ledgend-symbol-160 {border: 5px solid #188977; width: 20px;}
+  .ledgend-symbol-170 {border: 5px solid #137177; width: 20px;}
+  .ledgend-symbol-180 {border: 5px solid #0E4D64; width: 20px;}
+  .ledgend-symbol-200 {border: 5px solid #0A2F51; width: 20px;}
+
+  .ledgend {
+    font-size: 10px;
+  }
+
+  }
+
+  
+
 
 /*
  * react-calendar-heatmap styles
- *
+ * this is copied from the react-calendar-module folder. 
  * All of the styles in this file are optional and configurable!
  * The github and gitlab color scales are provided for reference.
  */
 
-.react-calendar-heatmap text {
+ .react-calendar-heatmap text {
   font-size: 10px;
   fill: #aaa;
 }
@@ -101,46 +268,3 @@ footer {
 .react-calendar-heatmap .color-scale-170 { fill: #137177; }
 .react-calendar-heatmap .color-scale-180 { fill: #0E4D64; }
 .react-calendar-heatmap .color-scale-200 { fill: #0A2F51; }
-
-/* ledgend styles */
-
-.ledgend-symbol-120 { border: 5px solid #DEEDCF}
-.ledgend-symbol-130 { border: 5px solid #99D492}
-.ledgend-symbol-140 {border: 5px solid #56B870}
-.ledgend-symbol-150 {border: 5px solid #1D9A6C}
-.ledgend-symbol-160 {border: 5px solid #188977}
-.ledgend-symbol-170 {border: 5px solid #137177}
-.ledgend-symbol-180 {border: 5px solid #0E4D64}
-.ledgend-symbol-200 {border: 5px solid #0A2F51}
-
-
-.ledgend {
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* responisve styles*/
-
-@media (max-width: 500px){ 
-  header {
-    padding: 10px 0px 10px 0px;
-  }     
-
-  h1 {
-    font-size: 36px;
-  }  
-
-  h2 {
-    font-size: 16px;
-    margin: 20px 0 15px 0;
-  }
-
-  p {
-    font-size: 12px;
-    line-height: 15px;
-  }
-
-  .heatmap {
-    width: 90%;
-  }
-}
