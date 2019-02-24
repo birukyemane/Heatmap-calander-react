@@ -44,6 +44,11 @@ p {
   text-align: justify;
 }
 
+.slider {
+  display: flex;
+  align-items: center;
+}
+
 .heatmap {
   width: 70%;
 }

@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import './App.css';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import ReactTooltip from 'react-tooltip';
-import stockData from './assets/data'
+import stockData from './assets/data';
+import Legend from './components/Ledgend';
+import Slider from './components/Slider'
+import {generateClass, getToolTip} from './Utils/Utils';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faForward } from '@fortawesome/free-solid-svg-icons'; 
+import { faBackward } from '@fortawesome/free-solid-svg-icons'; 
+
+library.add(faForward, faBackward);
 
 class App extends Component {
   state = {
     data: stockData,
-    startDate: new Date('2016-12-31'),
-    endDate: new Date('2017-12-31')
-    
+    currentYear : '2017'      
   }
-  render() {
-  
+
+  render() {  
     return (
      <div className="main-wrapper">
        <header>
@@ -25,15 +31,16 @@ class App extends Component {
             about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
           </p>
         </article>       
+          <Slider year={this.state.currentYear}/>
           <CalendarHeatmap
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
+            startDate={`${this.state.currentYear-1}-12-31`}
+            endDate={`${this.state.currentYear}-12-31`}
             values={this.state.data}
             classForValue={generateClass}
             showWeekdayLabels={true}
             tooltipDataAttrs={getToolTip}
           />
-          <div>{legend()}</div>
+          <Legend />
           <ReactTooltip />
        </div>
        <footer>copyright@neuroeventLabs</footer>
@@ -43,47 +50,3 @@ class App extends Component {
 }
 
 export default App;
-
-const generateClass = value => {
-  if (!value) {
-    return 'color-empty';
-  } else if(value.close < 120){
-    return 'color-scale-120';
-  } else if(value.close < 130){
-    return 'color-scale-130';
-  } else if(value.close < 140){
-    return 'color-scale-140';
-  } else if(value.close < 150){
-    return 'color-scale-150';
-  } else if(value.close < 160){
-    return 'color-scale-160';
-  } else if(value.close < 170){
-    return 'color-scale-170';
-  } else if(value.close < 180){
-    return 'color-scale-180';
-  }else if(value.close < 200){
-    return 'color-scale-200';
-  }
-}
-
-const getToolTip = value => {
-  if (!value.date) {
-    console.log('no value')
-    return {
-      'data-tip': 'no data',
-    };
-  } else {
-    console.log('error in value ', value)
-    return {
-      'data-tip': `${value.date.toString().slice(0, 10)} closing price: ${value.close}`,
-    };
-  } 
-}
-
-const legend = () =>{
-  const  scales = [120,130,140,150,160,170,180];
-  const legendSymbols = scales.map((scale,index) =>{
-    return <div key={index+1}> <div className={`ledgend-symbol-${scale}`}></div><small>{scale}</small></div>
-  })
-  return <div className="ledgend">{legendSymbols}</div>
-}
