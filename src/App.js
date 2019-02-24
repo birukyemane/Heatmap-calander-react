@@ -33,7 +33,7 @@ class App extends Component {
             showWeekdayLabels={true}
             tooltipDataAttrs={getToolTip}
           />
-          <diV>{legend}</diV>
+          <div>{legend()}</div>
           <ReactTooltip />
        </div>
        <footer>copyright@neuroeventLabs</footer>
@@ -81,10 +81,9 @@ const getToolTip = value => {
 }
 
 const legend = () =>{
-  const  scales = [120,130,140,150,160,170,180] ;
+  const  scales = [120,130,140,150,160,170,180];
   const legendSymbols = scales.map((scale,index) =>{
-    return <div className={`ledgendSymbol color-scale-${scale}`}></div>
+    return <div key={index+1}> <div className={`ledgend-symbol-${scale}`}></div><small>{scale}</small></div>
   })
-  return <div className="legend">{legendSymbols}</div>
-
+  return <div className="ledgend">{legendSymbols}</div>
 }

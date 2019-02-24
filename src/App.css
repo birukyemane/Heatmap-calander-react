@@ -16,9 +16,8 @@ body {
 
 header {
   color: white;
+  background: black;
   width: 100%;
-  background: url('./assets/stock-1863880_1920.jpg');
-  background-size: cover;
   padding: 40px 0px 40px 0px;
 }
 
@@ -35,14 +34,11 @@ h1 {
 h2 {
   font-size: 20px;
   margin: 30px 0 20px 0;
+  color: blue;
 }
 
 p {
-  color: rgba(255,255,255,1);
-  background: black;
-  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+ 
   padding: 10px;
   line-height: 28px;
   text-align: justify;
@@ -101,9 +97,21 @@ footer {
 .react-calendar-heatmap .color-scale-180 { fill: #0E4D64; }
 .react-calendar-heatmap .color-scale-200 { fill: #0A2F51; }
 
-.ledgendSymbol{
-  width: 10px;
-  height: 10px;
+/* ledgend styles */
+
+.ledgend-symbol-120 { border: 5px solid #DEEDCF}
+.ledgend-symbol-130 { border: 5px solid #99D492}
+.ledgend-symbol-140 {border: 5px solid #56B870}
+.ledgend-symbol-150 {border: 5px solid #1D9A6C}
+.ledgend-symbol-160 {border: 5px solid #188977}
+.ledgend-symbol-170 {border: 5px solid #137177}
+.ledgend-symbol-180 {border: 5px solid #0E4D64}
+.ledgend-symbol-200 {border: 5px solid #0A2F51}
+
+
+.ledgend {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* responisve styles*/
