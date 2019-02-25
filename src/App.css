@@ -2,6 +2,7 @@
 
 
 /* general styles */
+
 * {
   padding:0;
   margin: 0;
@@ -13,7 +14,7 @@ body {
   background: #EFEFEF;
 }
 
-.App {  /* the main containe of the app*/
+.App {  /* the main container of the app*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +26,7 @@ body {
 }
 
 /* header styles */
+
 header {
   display: flex;
   flex-direction: column;
@@ -41,7 +43,7 @@ header {
   margin-bottom: 20px;
 }
 
-.headerImg {  /* logo imag*/
+.headerImg {  /* logo img */
   height: 150px;
   width: 40%;
   margin-right: 30px;
@@ -103,11 +105,12 @@ header {
   box-shadow:  14px 0 30px -14px #333;
 }
 
-h3.introText {  /* intro text title*/ 
+h3.introText {  
   margin: 30px 0 20px 0;
 }
 
 /*heatmap component styles*/
+
 .heatmap { 
   background: white;
   box-shadow:  14px 0 30px -14px #333;
@@ -115,6 +118,7 @@ h3.introText {  /* intro text title*/
 }
 
  /* slider styles*/
+
 .slider {
   display: flex;
   justify-content: center;
@@ -144,7 +148,7 @@ h3.introText {  /* intro text title*/
   cursor: pointer;
 }
 
-/* ledgend styles */
+/* legend styles used by Legend component. This is not the palette, go down for the palette classes*/
 .ledgend-symbol-120 {border: 5px solid #DEEDCF; width: 50px;}
 .ledgend-symbol-130 {border: 5px solid #99D492; width: 50px;}
 .ledgend-symbol-140 {border: 5px solid #56B870; width: 50px;}
@@ -193,7 +197,6 @@ footer {
   font-size: 17px;
 }
 
-
 footer p {
   color:  grey;
   font-size: 15px;
@@ -206,10 +209,10 @@ footer section {
   justify-content: center;
 }
 
-
-/* responisve styles*/
+/* responisve styles for devices with screen size less than 500px */
 
 @media (max-width: 500px){ 
+
   header {
     padding: 10px 0px 10px 0px;
   }     
@@ -270,16 +273,16 @@ footer section {
     font-size: 10px;
   }
 
-  }
+} /*end of responsive styles*/
 
   
-/*
- * react-calendar-heatmap styles this is copied from the react-calendar-module folder. 
- * All of the styles in this file are optional and configurable!
- * The github and gitlab color scales are provided for reference.
- */
+/* react-calendar-heatmap styles. */
 
- .react-calendar-heatmap text {
+/* I copied it from the react-calendar-module installation folder and customized it. According to the documentation 
+   you can copy it to a css file in your app. All of the styles in this file are optional and configurable!
+*/
+
+.react-calendar-heatmap text {
   font-size: 10px;
   fill: #aaa;
 }
@@ -293,7 +296,7 @@ footer section {
   stroke-width: 1px;
 }
 
-/* Default color scale - if you dont have a color scale (palette)*/
+/* Default color scale - a simple palette used if you dont define a color scale (palette) */
 
 .react-calendar-heatmap .color-empty {  /*used if no value*/
   fill: #eeeeee;
@@ -303,7 +306,8 @@ footer section {
   fill: #8cc665;
 }
 
-/* palette color scale - for refernce. not used for this app*/
+
+/* palette color scale - I defined this one by configuring the default color-scale(palette) */
 
 .react-calendar-heatmap .color-scale-120 { fill: #DEEDCF; }
 .react-calendar-heatmap .color-scale-130 { fill: #99D492; }

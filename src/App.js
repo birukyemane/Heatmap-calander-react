@@ -1,8 +1,8 @@
 // this is the main App component. 
 
 import React, { Component } from 'react';
-import './App.css';  // CSS for the app is stored here. I preper to use one CSS usually. but sometimes for each component
-import stockData from './assets/data'; // a json file that stores stock data for IBM(2015-2019). check the structure please
+import './App.css';  // CSS for the app is stored here. I prefer to use one CSS file usually. but if application is big separate css files for each component
+import stockData from './assets/data'; // a json file that stores stock price data for IBM(2015-2019). 
 import Heatmap from './components/Heatmap'; // a component that renders the heat map
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -14,16 +14,16 @@ import { faBackward } from '@fortawesome/free-solid-svg-icons';
 library.add(faForward, faBackward);  
 
 class App extends Component {
-  state = {              // our apps state or data model
-    data: stockData,     // holds stock data we gonna dispaly with heatmap
+  state = {              // the app's state or data model
+    data: stockData,     // stock data we gonna dispaly with heatmap
     currentYear : 2019  // year which is being displayed currently in the heatmap, initialized to the latest year
   }
 
-  nextYear = () => {  // increament the current year when user clicks next 
+  nextYear = () => {  // increament currentYear when user clicks next 
     if(this.state.currentYear < 2019) this.setState({currentYear:this.state.currentYear + 1})
   };
 
-  prevYear = () => {  // decreament the current year when user clicks previous
+  prevYear = () => {  // decreament currentYear when user clicks previous
     if(this.state.currentYear > 2015) this.setState({currentYear:this.state.currentYear - 1})
   }
 

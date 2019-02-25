@@ -17,7 +17,7 @@ const Header = () =>{
                   <input className="learnMore" type="button" value="LEARN MORE" />       
                 </div>
             </div>
-         <div className="blueHeader">
+            <div className="blueHeader">
               <h2 className="blueTitle">CREATE A <span className="title-emphasis">POWERFUL</span> VISUALIZATION NOW!</h2>
             </div>
         </header>
