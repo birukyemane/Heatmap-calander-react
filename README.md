@@ -7,9 +7,9 @@ By [Biruk Yemane](https://github.com/birukyemane)
 1. Navigate to [repo](https://github.com/birukyemane/Heatmap-calander-react)
 2. Clone locally using
  `git clone https://github.com/birukyemane/Heatmap-calander-react.git`
-3. Install dependencies using `yarn install`  - you can get ´yarn´ [from](https://yarnpkg.com/en/)
+3. Install dependencies using `yarn install`  - you can get `yarn` [from](https://yarnpkg.com/en/)
 4. Go to the cloned project directory `cd Heatmap-calander-react`
-4. Start your server using `yarn start` - if you get a prompt asking to run on a diffrent port press enter key  
+4. Start your server using `yarn start` - if you get a prompt asking to start server on diffrent port press `Enter` key  
 5. Navigate to app in [browser](http://localhost:3000)
 6. Enjoy!
 
