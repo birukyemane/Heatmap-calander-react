@@ -15,7 +15,7 @@ By [Biruk Yemane](https://github.com/birukyemane)
 
 ## Discussion
 
-I used the following technologies: HTML, CSS, React, Font Awesome. And [react-cal-heatmap] (https://www.npmjs.com/package/react-cal-heatmap ) and [react-tooltip components](https://www.npmjs.com/package/react-tooltip).  
+I used the following technologies: HTML, CSS, React, Font Awesome. And [react-cal-heatmap](https://www.npmjs.com/package/react-cal-heatmap ) and [react-tooltip components](https://www.npmjs.com/package/react-tooltip).  
 I used [create-react-app](https://goo.gl/26jfy4) to generate the scaffolding for this app.
 
 ## Requirements
