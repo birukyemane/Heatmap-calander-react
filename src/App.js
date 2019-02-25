@@ -16,7 +16,7 @@ library.add(faForward, faBackward);
 class App extends Component {
   state = {              // the app's state or data model
     data: stockData,     // stock data we gonna dispaly with heatmap
-    currentYear : 2019  // year which is being displayed currently in the heatmap, initialized to the latest year
+    currentYear : 2015  // year which is being displayed currently in the heatmap, initialized to the latest year
   }
 
   nextYear = () => {  // increament currentYear when user clicks next 
