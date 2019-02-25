@@ -1,6 +1,8 @@
-// this module contains functions that are used as callback in components
+// this module contains functions that are required as callback by third aparty components I used
 
-const generateClass = value => {
+/* This is passed to react-calendar-heatmap component. it takes a value(stock price) and determines what color-scale 
+class it should be assigned from the palatte */
+const generateClass = value => { 
     if (!value) {
       return 'color-empty';
     } else if(value.close < 120){
@@ -22,12 +24,14 @@ const generateClass = value => {
     }
   }
   
+  /* this is a callback passed to react-tooltip component. it takes a value and determines what tool tip message 
+  to display*/
   const getToolTip = value => {
-    if (!value.date) {
+    if (!value.date) { // sometimes there is no stock data for a certain date. value will be {date:'', close: ''}
       return {
         'data-tip': 'no data',
       };
-    } else {
+    } else {  // if there is value 
       return {
         'data-tip': `${value.date.toString().slice(0, 10)} closing price: ${value.close}`,
       };

@@ -1,6 +1,8 @@
+// this is the main App component. 
+
 import React, { Component } from 'react';
-import './App.css';
-import stockData from './assets/data'; // a json file that stores stock data for IBM(2015-2019) 
+import './App.css';  // CSS for the app is stored here. I preper to use one CSS usually. but sometimes for each component
+import stockData from './assets/data'; // a json file that stores stock data for IBM(2015-2019). check the structure please
 import Heatmap from './components/Heatmap'; // a component that renders the heat map
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -12,32 +14,32 @@ import { faBackward } from '@fortawesome/free-solid-svg-icons';
 library.add(faForward, faBackward);  
 
 class App extends Component {
-  state = {              // this is our apps state 
-    data: stockData,     // to hold the stock data we dispaly with heatmap
-    currentYear : '2019'  // the year which is being displayed currently in the heatmap
+  state = {              // our apps state or data model
+    data: stockData,     // holds stock data we gonna dispaly with heatmap
+    currentYear : 2019  // year which is being displayed currently in the heatmap, initialized to the latest year
   }
 
-  nextYear = () => {
-    if(this.state.currentYear < 2019) this.setState({currentYear:Number(this.state.currentYear) + 1})
-    console.log('currnt year', this.state.currentYear)
+  nextYear = () => {  // increament the current year when user clicks next 
+    if(this.state.currentYear < 2019) this.setState({currentYear:this.state.currentYear + 1})
   };
 
-  prevYear = () => {
-    if(this.state.currentYear > 2015) this.setState({currentYear:Number(this.state.currentYear) - 1})
+  prevYear = () => {  // decreament the current year when user clicks previous
+    if(this.state.currentYear > 2015) this.setState({currentYear:this.state.currentYear - 1})
   }
 
-  render() {  
+  render() {   // renders the UI for the application. There are Header, content and Footer 
     return (
      <div className="App">
         <Header />
         <div className="content">
-          <article className="introText">
+          <article className="introText">   {/* article can be taken out as separate component if needed */}
             <h3 className="title">IBM - 5 Year Stock Price History</h3>
             <p>Historical daily share closing price data for IBM since 2015. You can find further info
               about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
             </p>
-          </article>       
-          <Heatmap state = {this.state} prevYear={this.prevYear} nextYear={this.nextYear} />
+          </article>     
+          {/* we pass the state(data), currentYear and prevYear functions to the Heatmap component*/}  
+          <Heatmap state = {this.state} prevYear={this.prevYear} nextYear={this.nextYear} /> 
         </div>       
         <Footer />
       </div>

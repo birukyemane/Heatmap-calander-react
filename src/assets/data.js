@@ -1,3 +1,6 @@
+/* IBMS 5 year stock price data based on closing price. downloaded from 
+https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history */
+
 const data = [
   {
     "date": "2015-01-02",

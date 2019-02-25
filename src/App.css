@@ -1,3 +1,7 @@
+/* all styles for the whole app are defined here in one place. */ 
+
+
+/* general styles */
 * {
   padding:0;
   margin: 0;
@@ -9,12 +13,18 @@ body {
   background: #EFEFEF;
 }
 
-.App {
+.App {  /* the main containe of the app*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.title-emphasis { /* to emphasise text*/
+  color: white;
+  font-style: italic;
+}
+
+/* header styles */
 header {
   display: flex;
   flex-direction: column;
@@ -24,7 +34,6 @@ header {
   padding: 40px 0px 0 0px;
 }
 
-
 .headerContainer {
   display: flex;
   width: 70%;  
@@ -32,28 +41,24 @@ header {
   margin-bottom: 20px;
 }
 
-.headerImg {
+.headerImg {  /* logo imag*/
   height: 150px;
   width: 40%;
   margin-right: 30px;
+  border-radius: 5%;
 }
 
 .headerTitle {
   font-size: 18px;  
 }
 
-.learnMore {
+.learnMore { 
   padding: 8px 15px 8px 15px;
   font-size: 12px;
   color: white;
   background:#4693d9;
   border-radius: 5px;
   border: 0;
-}
-
-.title-emphasis {
-  color: white;
-  font-style: italic;
 }
 
 .blueHeader {
@@ -81,6 +86,15 @@ header {
   left: 0;
 }
 
+
+/* content styles */ 
+
+.content {
+  width: 70%;
+}
+
+/*intro text */
+
 .introText {
   text-align: justify;
   background: white;
@@ -89,16 +103,18 @@ header {
   box-shadow:  14px 0 30px -14px #333;
 }
 
-h3.introText {
+h3.introText {  /* intro text title*/ 
   margin: 30px 0 20px 0;
 }
 
-.heatmap {
+/*heatmap component styles*/
+.heatmap { 
   background: white;
   box-shadow:  14px 0 30px -14px #333;
   padding-top: 20px;
 }
 
+ /* slider styles*/
 .slider {
   display: flex;
   justify-content: center;
@@ -128,21 +144,15 @@ h3.introText {
   cursor: pointer;
 }
 
-.content {
-  width: 70%;
-}
-
 /* ledgend styles */
-
-.ledgend-symbol-120 { border: 5px solid #DEEDCF; width: 50px;}
-.ledgend-symbol-130 { border: 5px solid #99D492; width: 50px;}
+.ledgend-symbol-120 {border: 5px solid #DEEDCF; width: 50px;}
+.ledgend-symbol-130 {border: 5px solid #99D492; width: 50px;}
 .ledgend-symbol-140 {border: 5px solid #56B870; width: 50px;}
 .ledgend-symbol-150 {border: 5px solid #1D9A6C; width: 50px;}
 .ledgend-symbol-160 {border: 5px solid #188977; width: 50px;}
 .ledgend-symbol-170 {border: 5px solid #137177; width: 50px;}
 .ledgend-symbol-180 {border: 5px solid #0E4D64; width: 50px;}
 .ledgend-symbol-200 {border: 5px solid #0A2F51; width: 50px;}
-
 
 .ledgend {
   display: flex;
@@ -158,6 +168,7 @@ h3.introText {
   padding-bottom: 25px;
 }
 
+/*footer styles*/
 footer {
   background:#404040;
   color: darkgrey;
@@ -168,7 +179,6 @@ footer {
   display: flex;
   justify-content: center;
 }
-
 
 .footerContent {
   width: 18%;
@@ -247,8 +257,8 @@ footer section {
     font-size: 10px;
   }
 
-  .ledgend-symbol-120 { border: 5px solid #DEEDCF; width: 20px;}
-  .ledgend-symbol-130 { border: 5px solid #99D492; width: 20px;}
+  .ledgend-symbol-120 {border: 5px solid #DEEDCF; width: 20px;}
+  .ledgend-symbol-130 {border: 5px solid #99D492; width: 20px;}
   .ledgend-symbol-140 {border: 5px solid #56B870; width: 20px;}
   .ledgend-symbol-150 {border: 5px solid #1D9A6C; width: 20px;}
   .ledgend-symbol-160 {border: 5px solid #188977; width: 20px;}
@@ -263,11 +273,8 @@ footer section {
   }
 
   
-
-
 /*
- * react-calendar-heatmap styles
- * this is copied from the react-calendar-module folder. 
+ * react-calendar-heatmap styles this is copied from the react-calendar-module folder. 
  * All of the styles in this file are optional and configurable!
  * The github and gitlab color scales are provided for reference.
  */
@@ -286,19 +293,17 @@ footer section {
   stroke-width: 1px;
 }
 
-/*
- * Default color scale
- */
+/* Default color scale - if you dont have a color scale (palette)*/
 
-.react-calendar-heatmap .color-empty {
+.react-calendar-heatmap .color-empty {  /*used if no value*/
   fill: #eeeeee;
 }
 
-.react-calendar-heatmap .color-filled {
+.react-calendar-heatmap .color-filled { /*used when there is value.*/
   fill: #8cc665;
 }
 
-/* palette color scale */
+/* palette color scale - for refernce. not used for this app*/
 
 .react-calendar-heatmap .color-scale-120 { fill: #DEEDCF; }
 .react-calendar-heatmap .color-scale-130 { fill: #99D492; }
