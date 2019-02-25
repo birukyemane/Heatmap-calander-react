@@ -2,6 +2,8 @@
 
 By [Biruk Yemane](https://github.com/birukyemane)
 
+check it out [live](https://zen-tereshkova-8baf99.netlify.com/)
+
 ## Instructions
 
 1. Navigate to [repo](https://github.com/birukyemane/Heatmap-calander-react)
