@@ -19,27 +19,54 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
   background:#404040;
   width: 100%;
   padding: 40px 0px 0 0px;
 }
 
+
+.headerContainer {
+  display: flex;
+  width: 70%;  
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.headerImg {
+  height: 150px;
+  width: 40%;
+  margin-right: 30px;
+}
+
+.headerTitle {
+  font-size: 18px;  
+}
+
+.learnMore {
+  padding: 8px 15px 8px 15px;
+  font-size: 12px;
+  color: white;
+  background:#4693d9;
+  border-radius: 5px;
+  border: 0;
+}
+
+.title-emphasis {
+  color: white;
+  font-style: italic;
+}
+
 .blueHeader {
   background: #4693d9;
-  width: 70%;
+  width: 80%;
   position: relative;
+  padding: 20px;
 }
 
 .blueTitle {
   color: #ddd;
   font-size: 15px;
   margin-left: 30px;
-}
-
-.blueTitle-emphasis {
-  color: white;
-  font-style: italic;
 }
 
 .blueHeader::after {  
@@ -54,50 +81,51 @@ header {
   left: 0;
 }
 
-h1 {
-  font-size: 40px;
-  margin-bottom: 5px;
-  text-align: center;
-  font-family: 'Londrina Shadow', cursive;
-}
-
-h2 {
-  font-size: 20px;
-  margin: 30px 0 20px 0;
-}
-
-p { 
-  line-height: 28px;
-  text-align: justify;
-}
-
 .introText {
+  text-align: justify;
   background: white;
   padding: 12px;
   margin-top: 20px;
   box-shadow:  14px 0 30px -14px #333;
 }
 
+h3.introText {
+  margin: 30px 0 20px 0;
+}
 
 .heatmap {
   background: white;
   box-shadow:  14px 0 30px -14px #333;
+  padding-top: 20px;
 }
 
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+}
+
+.slider-title {
+  color: #404040;
+  font-style: italic;
 }
 
 .arrow {
   font-size: 20Px;
   color: #4693d9;
+  margin: 0 20px;  
+}
+
+.arrow--disabled {
+  font-size: 20Px;
+  color:  grey;
   margin: 0 20px;
 }
 
 .arrow:hover {
   color: #00FF00;
+  cursor: pointer;
 }
 
 .content {
@@ -127,6 +155,7 @@ p {
   justify-content: flex-end;
   background: white;
   margin-bottom:30px;
+  padding-bottom: 25px;
 }
 
 footer {
@@ -142,10 +171,9 @@ footer {
 
 
 .footerContent {
-  width: 22%;
+  width: 18%;
   padding: 13px;
   color: white;
-  padding: 13px;
   text-align: left;
 }
 
@@ -162,7 +190,7 @@ footer p {
 }
 
 footer section {
-  padding: 13px 0;
+  padding: 20px 0;
   background:#202020;
   display: flex;
   justify-content: center;
@@ -176,18 +204,26 @@ footer section {
     padding: 10px 0px 10px 0px;
   }     
 
-  h1 {
-    font-size: 36px;
-  }  
-
-  h2 {
-    font-size: 16px;
-    margin: 20px 0 15px 0;
+  .headerContainer {
+   margin-bottom: 5px;
   }
 
-  p {
+  .headerImg {
+    display: none;
+  }
+
+  .headerTitle {
+    font-size: 15px;  
+  }
+
+  .introText {
     font-size: 12px;
-    line-height: 15px;
+    margin-top: 10px;
+  }
+
+  h3.introText {
+    font-size: 16px;
+    margin: 20px 0 15px 0;
   }
 
   .blueHeader {
@@ -196,6 +232,10 @@ footer section {
 
   .content {
     width: 90%;
+  }
+
+  .ledgend-wrapper {
+      margin-bottom:15px;
   }
 
   .footerHolder {

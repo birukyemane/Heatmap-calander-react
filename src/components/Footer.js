@@ -30,7 +30,8 @@ const Footer = () =>{
                 </div>
             </div>
             <section >
-                <p>copy right</p>
+                <p>Biruk Yemane, Junior front-end developer, Helsinki<br />
+                Copyright &copy; 2019, Biruk Yemane. All right reserved.</p>
                 <i class="fa fa-twitter-square"></i>
             </section>    
         </footer>
