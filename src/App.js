@@ -34,12 +34,12 @@ class App extends Component {
         <div className="content">
           <article className="introText">   {/* article can be taken out as separate component if needed */}
             <h3 className="title">IBM - 5 Year Stock Price History</h3>
-            <p>You can find further info
-              about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
-            </p>
           </article>     
           {/* we pass the state(data), currentYear and prevYear functions to the Heatmap component*/}  
           <Heatmap state = {this.state} prevYear={this.prevYear} nextYear={this.nextYear} /> 
+          <p>You can find further info
+              about the data from <a href="https://www.macrotrends.net/stocks/charts/IBM/ibm/stock-price-history">here</a>.
+            </p>
         </div>       
        
       </div>
