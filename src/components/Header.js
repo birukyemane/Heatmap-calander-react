@@ -8,18 +8,11 @@ const Header = () =>{
     return (
         <header>
             <div className="headerContainer">
-                <img src={Logo} alt="analytics" className="headerImg" />
                 <div>
-                  <h1 className="headerTitle"><span className="title-emphasis ">HEATMAP CALENDAR</span> WITH A <br /><span className="title-emphasis">SQUEEKY CLEAN</span> DESIGN.</h1>
-                  <br />
-                  <small>The component expands to size of container  <br />and is super configurable.</small> <br />
-                  <br />
-                  <input className="learnMore" type="button" value="LEARN MORE" />       
+                  <h1 className="headerTitle title-emphasis">HEATMAP CALENDAR</h1>   
                 </div>
             </div>
-            <div className="blueHeader">
-              <h2 className="blueTitle">CREATE A <span className="title-emphasis">POWERFUL</span> VISUALIZATION NOW!</h2>
-            </div>
+           
         </header>
     );
 }
