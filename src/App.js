@@ -41,7 +41,7 @@ class App extends Component {
           {/* we pass the state(data), currentYear and prevYear functions to the Heatmap component*/}  
           <Heatmap state = {this.state} prevYear={this.prevYear} nextYear={this.nextYear} /> 
         </div>       
-        <Footer />
+       
       </div>
     );
   }
